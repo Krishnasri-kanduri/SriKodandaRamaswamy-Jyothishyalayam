@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Kodanda Ramaswamy Jyothishyalamm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #800000;
+            --primary-light: #A52A2A;
+            --secondary: #D4AF37;
+            --light: #FFF9E6;
+            --dark: #2C1810;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--secondary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-image {
+            width: 280px;
+            height: 140px;
+            margin: 0 auto 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--secondary);
+        }
+
+        .logo-image img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 6px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            margin: 20px 0;
+            font-style: italic;
+            line-height: 1.7;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 4px solid var(--secondary);
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(to bottom, #FFF9E6, #FFEBB5);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Appointment Section */
+        .appointment {
+            background-color: white;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .amavasya-notice {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            border-left: 3px solid var(--secondary);
+        }
+
+        .whatsapp-instruction {
+            background: rgba(37, 211, 102, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #25D366;
+        }
+
+        .whatsapp-instruction i {
+            color: #25D366;
+            margin-right: 8px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+        }
+
+        .contact h2.section-title {
+            color: var(--secondary) !important;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-details {
+            margin-top: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            font-size: 1.3rem;
+            margin-right: 12px;
+            color: var(--secondary);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(128, 0, 0, 0.95);
+            z-index: 1000;
+            padding: 12px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-small {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 50px 15px;
+            }
+        }
+
+        /* Achievements Section */
+        .achievements {
+            background-color: #f9f9f9;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .achievement-item {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .achievement-date {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .achievement-description {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Decorative Elements */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid var(--secondary);
+            background: rgba(212, 175, 55, 0.1);
+            margin: 15px 0;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 3rem;
+            color: rgba(128, 0, 0, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .add-testimonial {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
+        }
+
+        .add-testimonial h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .no-testimonials {
+            text-align: center;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 8px;
+            margin-top: 30px;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Success Message */
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        .alternative-contact {
+            background: rgba(0, 123, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-small">Sri Kodanda Ramaswamy Jyothishyalamm</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home">
+        <div class="hero-content">
+            <div class="logo-image">
+                <!-- Placeholder for your image -->
+                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--secondary);">
+                    <a href="https://ibb.co/4Z9QNy07"><img src="https://i.ibb.co/qMXZ1G2d/09cf4f324e4f792bad81b43c7a464c66.jpg" alt="09cf4f324e4f792bad81b43c7a464c66" border="0"></a>
+                </div>
+            </div>
+            <p class="subtitle">Sri Krishna Nilayam</p>
+            <p class="tagline">
+                ఆపదామపహర్తారం దాతారం సర్వసంపదామ్ ।<br>
+                లోకాభిరామం శ్రీరామం భూయో భూయో నమామ్యహమ్ ॥
+            </p>
+            <a href="#appointment" class="btn">Book Appointment Now</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Dr. Srinisavan Kanduri</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Dr. Srinisavan Kanduri is a renowned astrologer and spiritual guide with over 20+ years of dedicated practice in Vedic astrology and Vaasthu Shastra. His profound knowledge and accurate predictions have transformed the lives of thousands of individuals, guiding them towards harmony, prosperity, and spiritual fulfillment.</p>
+                    
+                    <p>Dr. Kanduri specializes in comprehensive horoscope analysis, life predictions, match-making, and Vaasthu consultations for homes, offices, and commercial establishments. His approach combines ancient Vedic wisdom with practical solutions tailored to modern life challenges.</p>
+                    
+                    <p>With his compassionate guidance and deep understanding of planetary influences, Dr. Kanduri has earned the trust and respect of clients across Andhra Pradesh and beyond. His consultations are known for their accuracy, clarity, and transformative impact on people's lives.</p>
+                    
+                    <div class="quote">
+                        "Sri Srinisavan has led thousands with the divine science of astrology and vaasthu, bringing light and direction to countless lives."
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for image -->
+                    <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); height: 350px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: white; flex-direction: column; padding: 15px;">
+                        <i class="fas fa-user" style="font-size: 4rem; margin-bottom: 15px;"></i>
+                        <h3>Dr. Srinisavan Kanduri</h3>
+                        <p>Renowned Astrologer & Spiritual Guide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="text-center">Comprehensive astrological and Vaasthu consultations for all aspects of life</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3>Horoscope Reading</h3>
+                    <p>Detailed analysis of your birth chart to understand life's patterns, potential, and planetary influences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crystal-ball"></i>
+                    </div>
+                    <h3>Astrology Consultation</h3>
+                    <p>Personalized guidance for career, relationships, health, finance, and important life decisions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-praying-hands"></i>
+                    </div>
+                    <h3>Remedies & Guidance</h3>
+                    <p>Effective remedies, pujas, and solutions for planetary challenges and life obstacles.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Vaasthu Consultation</h3>
+                    <p>Harmonizing your living and working spaces for prosperity, health, and overall well-being.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Match Making</h3>
+                    <p>Comprehensive compatibility analysis for marriage and relationship harmony.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Gemstone Recommendation</h3>
+                    <p>Personalized gemstone suggestions to enhance positive planetary influences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Awards & Achievements</h2>
+            <p class="text-center">Recognitions for excellence in Vedic astrology and Vaasthu Shastra</p>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="achievement-title">Jyothishya Ratna Award</div>
+                    <div class="achievement-date">April 30th, 2022</div>
+                    <div class="achievement-description">
+                        Received from Vishwajyothi Jyothishya Vignana Samsta in recognition of exceptional contributions to Vedic astrology.
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="achievement-title">Honorary Doctorate in Astrology</div>
+                    <div class="achievement-date">April 2nd, 2023</div>
+                    <div class="achievement-description">
+                        Awarded at the Vedic Astrology Conclave for outstanding expertise and contributions to the field of astrology.
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-title">Sri Shobhakruth Nama Samvathsara Ugadi Puraskaaralu</div>
+                    <div class="achievement-date">Ugadi Festival</div>
+                    <div class="achievement-description">
+                        Prestigious award presented during Ugadi celebrations for excellence in astrological predictions and guidance.
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-title">Mahatma Gandhi Sanman Award</div>
+                    <div class="achievement-date">March 8th, 2015</div>
+                    <div class="achievement-description">
+                        Received from the International Integrity Peace and Friendship Society in Karnataka. Presented by Hon'ble Revenue Minister V. Srinivas Prasad, in recognition of outstanding services in astrology and Vaastu.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="text-center">Hear what our clients say about our services</p>
+            
+            <div id="testimonials-container" class="testimonial-grid">
+                <!-- Default testimonials will be added here -->
+            </div>
+            
+            <div class="add-testimonial">
+                <h3>Share Your Experience</h3>
+                <form id="testimonial-form">
+                    <div class="form-group">
+                        <label for="testimonial-name">Your Name</label>
+                        <input type="text" id="testimonial-name" name="testimonial-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonial-text">Your Testimonial</label>
+                        <textarea id="testimonial-text" name="testimonial-text" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Testimonial</button>
+                </form>
+                <div id="testimonial-success" class="success-message">
+                    Thank you for sharing your experience! Your testimonial has been submitted.
+                </div>
+                <div id="testimonial-error" class="error-message">
+                    There was an error submitting your testimonial. Please try again.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="appointment">
+        <div class="container">
+            <h2 class="section-title">Book an Appointment</h2>
+            <p class="text-center">Schedule a consultation with Dr. Srinisavan Kanduri</p>
+            
+            <div class="amavasya-notice">
+                <p><strong>Note:</strong> No appointments are available on Amavasya days.</p>
+            </div>
+            
+            <div class="form-container">
+                <!-- Formspree Form with your URL -->
+                <form action="https://formspree.io/f/xnngvygg" method="POST" id="appointment-form">
+                    <input type="hidden" name="_subject" value="New Appointment Request - Sri Kodanda Ramaswamy">
+                    <input type="hidden" name="_replyto" value="noreply@srikodanda.com">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Contact Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Optional (for confirmation)">
+                    </div>
+                    <div class="form-group">
+                        <label for="place">Place *</label>
+                        <input type="text" id="place" name="place" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Required *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="Horoscope Reading">Horoscope Reading</option>
+                            <option value="Astrology Consultation">Astrology Consultation</option>
+                            <option value="Remedies & Guidance">Remedies & Guidance</option>
+                            <option value="Vaasthu Consultation">Vaasthu Consultation</option>
+                            <option value="Match Making">Match Making</option>
+                            <option value="Gemstone Recommendation">Gemstone Recommendation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="method">Preferred Method *</label>
+                        <select id="method" name="method" required>
+                            <option value="">Select an option</option>
+                            <option value="Phone Call">Phone Call</option>
+                            <option value="In-person Visit">In-person Visit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Message (Optional)</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Any specific concerns or questions..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-calendar-check"></i> Submit Appointment Request
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="form-success" class="success-message">
+                    ✅ Thank you! Your appointment request has been sent successfully. We will contact you within 24 hours.
+                </div>
+
+                <!-- Alternative Contact Options -->
+                <div class="alternative-contact">
+                    <p><strong>Prefer direct contact?</strong></p>
+                    <a href="https://wa.me/917670895978" class="btn" style="background: #25D366; margin: 5px;" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Direct
+                    </a>
+                    <a href="tel:9705305855" class="btn" style="background: #007bff; margin: 5px;">
+                        <i class="fas fa-phone"></i> Call Now: 9705305855
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--secondary) !important;">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 style="color: var(--secondary)">Visit Our Center</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p><strong>Address:</strong><br>
+                                FF-5, Narsinha Enclave, Tadankivari Street,<br>
+                                Satyaranayana Puram, Vijayawada – 11<br>
+                                Landmark: 3rd left from Pragathi Book Centre, Pincode: 520011</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p><strong>Phone:</strong> 9705305855</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p><strong>WhatsApp:</strong> 7670895978</p>
+                                <a href="https://wa.me/917670895978" class="whatsapp-btn" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p><strong>Consultation Hours:</strong><br>
+                                Monday to Saturday: 9:00 AM - 7:00 PM<br>
+                                Sunday: 10:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="color: var(--secondary)">Send a Message</h3>
+                    <!-- Contact Form with Formspree -->
+                    <form action="https://formspree.io/f/xnngvygg" method="POST" id="contact-form">
+                        <input type="hidden" name="_subject" value="New Contact Message - Sri Kodanda Ramaswamy">
+                        
+                        <div class="form-group">
+                            <label for="message-name">Your Name *</label>
+                            <input type="text" id="message-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-phone">Contact Number *</label>
+                            <input type="tel" id="message-phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" name="email" placeholder="Optional">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div id="contact-success" class="success-message">
+                        ✅ Thank you! Your message has been sent successfully.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025 Sri Kodanda Ramaswamy Jyothishyalamm</p>
+            <p>Designed with devotion to Astrology & Vaasthu</p>
+        </div>
+    </footer>
+
+    <script>
+        // Default testimonials
+        const defaultTestimonials = [
+            {
+                name: "Ravi Kumar",
+                text: "Dr. Srinisavan's horoscope reading was incredibly accurate. His guidance helped me make important career decisions at the right time. The remedies suggested were simple yet effective."
+            },
+            {
+                name: "Priya Sharma",
+                text: "The Vaasthu consultation transformed our home environment. After implementing the changes suggested by Dr. Kanduri, we noticed positive changes in our family harmony and financial situation within months."
+            },
+            {
+                name: "Suresh Reddy",
+                text: "I consulted for marriage match-making and the analysis was very detailed. The predictions about compatibility have proven true. Thank you for your genuine guidance."
+            },
+            {
+                name: "Lakshmi Devi",
+                text: "The gemstone recommendation was perfect for me. I've seen significant improvement in my confidence and professional life after wearing the suggested gemstone. Dr. Srinisavan's knowledge is remarkable."
+            }
+        ];
+
+        // Initialize default testimonials
+        function initializeDefaultTestimonials() {
+            const testimonialsContainer = document.getElementById('testimonials-container');
+            
+            defaultTestimonials.forEach(testimonial => {
+                const testimonialCard = document.createElement('div');
+                testimonialCard.className = 'testimonial-card';
+                
+                testimonialCard.innerHTML = `
+                    <div class="testimonial-text">${testimonial.text}</div>
+                    <div class="testimonial-author">- ${testimonial.name}</div>
+                `;
+                
+                testimonialsContainer.appendChild(testimonialCard);
+            });
+        }
+
+        // Form success handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize default testimonials
+            initializeDefaultTestimonials();
+            
+            // Check URL for success parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Appointment form success
+            if (urlParams.get('appointment') === 'success') {
+                document.getElementById('form-success').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('form-success').style.display = 'none';
+                }, 10000);
+            }
+            
+            // Contact form success
+            if (urlParams.get('contact') === 'success') {
+                document.getElementById('contact-success').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('contact-success').style.display = 'none';
+                }, 10000);
+            }
+            
+            // Testimonial form
+            const testimonialForm = document.getElementById('testimonial-form');
+            testimonialForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('testimonial-name').value;
+                const text = document.getElementById('testimonial-text').value;
+                
+                if (name && text) {
+                    addTestimonial(name, text);
+                    testimonialForm.reset();
+                    
+                    document.getElementById('testimonial-success').style.display = 'block';
+                    setTimeout(() => {
+                        document.getElementById('testimonial-success').style.display = 'none';
+                    }, 5000);
+                }
+            });
+            
+            function addTestimonial(name, text) {
+                const testimonialsContainer = document.getElementById('testimonials-container');
+                const testimonialCard = document.createElement('div');
+                testimonialCard.className = 'testimonial-card';
+                
+                testimonialCard.innerHTML = `
+                    <div class="testimonial-text">${text}</div>
+                    <div class="testimonial-author">- ${name}</div>
+                `;
+                
+                testimonialsContainer.insertBefore(testimonialCard, testimonialsContainer.firstChild);
+                saveTestimonials();
+            }
+            
+            function saveTestimonials() {
+                const testimonials = [];
+                const testimonialCards = document.querySelectorAll('.testimonial-card');
+                
+                testimonialCards.forEach((card, index) => {
+                    if (index >= defaultTestimonials.length) {
+                        const text = card.querySelector('.testimonial-text').textContent;
+                        const author = card.querySelector('.testimonial-author').textContent.replace('- ', '');
+                        testimonials.push({ name: author, text: text });
+                    }
+                });
+                
+                localStorage.setItem('userTestimonials', JSON.stringify(testimonials));
+            }
+            
+            function loadUserTestimonials() {
+                const savedTestimonials = localStorage.getItem('userTestimonials');
+                
+                if (savedTestimonials) {
+                    const testimonials = JSON.parse(savedTestimonials);
+                    testimonials.forEach(testimonial => {
+                        addTestimonial(testimonial.name, testimonial.text);
+                    });
+                }
+            }
+            
+            loadUserTestimonials();
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '8px 0';
+                nav.style.background = 'rgba(128, 0, 0, 0.95)';
+            } else {
+                nav.style.padding = '12px 0';
+                nav.style.background = 'rgba(128, 0, 0, 0.95)';
+            }
+        });
+
+        // Add text-center class utility
+        const style = document.createElement('style');
+        style.textContent = '.text-center { text-align: center; }';
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

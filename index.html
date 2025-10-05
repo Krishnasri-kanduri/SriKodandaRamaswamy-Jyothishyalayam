@@ -303,12 +303,65 @@
             margin-right: 8px;
         }
 
+        .instagram-btn {
+            background: #E4405F;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .instagram-btn i {
+            margin-right: 8px;
+        }
+
+        .social-updates {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: center;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .social-updates h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
             text-align: center;
             padding: 25px 20px;
+        }
+
+        .footer-social {
+            margin: 15px 0;
+        }
+
+        .footer-social a {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: white;
         }
 
         /* Navigation */
@@ -374,6 +427,11 @@
             
             section {
                 padding: 50px 15px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -492,6 +550,25 @@
             color: var(--primary);
         }
 
+        .testimonial-rating { 
+            color: #FFD700; 
+            margin-bottom: 10px; 
+            font-size: 1.2rem;
+        }
+        .testimonial-date {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        .testimonial-count {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
         .add-testimonial {
             background: var(--light);
             padding: 25px;
@@ -546,6 +623,10 @@
             margin-top: 20px;
             text-align: center;
         }
+
+        .text-center { 
+            text-align: center; 
+        }
     </style>
 </head>
 <body>
@@ -565,24 +646,36 @@
         </div>
     </nav>
 
-   <!-- Hero Section -->
+    <!-- Hero Section -->
     <header id="home">
         <div class="hero-content">
             <div class="logo-image">
-                <!-- Placeholder for your image -->
                 <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--secondary);">
-              <a href="https://ibb.co/XfxsfL2R"><img src="https://i.ibb.co/MykVyS20/Whats-App-Image-2025-10-04-at-01-39-57-3ed8ef86.jpg" alt="Whats-App-Image-2025-10-04-at-01-39-57-3ed8ef86" border="0"></a>            </div>
+                    <a href="https://ibb.co/XfxsfL2R"><img src="https://i.ibb.co/MykVyS20/Whats-App-Image-2025-10-04-at-01-39-57-3ed8ef86.jpg" alt="Whats-App-Image-2025-10-04-at-01-39-57-3ed8ef86" border="0"></a>
+                </div>
             </div>
-
             <p class="subtitle">Sri Krishna Nilayam</p>
             <p class="tagline">
                 ఆపదామపహర్తారం దాతారం సర్వసంపదామ్ ।<br>
                 లోకాభిరామం శ్రీరామం భూయో భూయో నమామ్యహమ్ ॥
             </p>
             <a href="#appointment" class="btn">Book Appointment Now</a>
+            
+            <!-- Social Updates Section in Hero -->
+            <div class="social-updates">
+                <h4>📱 Follow for Updates & Weekly Horoscopes</h4>
+                <p>Stay connected for daily astrological insights, weekly horoscopes, and spiritual guidance</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/srinivasan_kanduri_astrologer?utm_source=ig_web_button_share_sheet&igsh=ZzB5ejcxaGdjOTU2" class="instagram-btn" target="_blank">
+                        <i class="fab fa-instagram"></i> Follow on Instagram
+                    </a>
+                    <a href="https://www.whatsapp.com/channel/0029VbBLKBw4IBhMMWCHcd0Q" class="whatsapp-btn" style="background: #25D366;" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Join WhatsApp Channel
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
-
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -590,18 +683,31 @@
             <h2 class="section-title">About Dr. Srinivasan Kanduri</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Dr. Srinivasan Kanduri is a renowned astrologer and spiritual guide with over 20+ years of dedicated practice in Vedic astrology and Vaasthu Shastra. His profound knowledge and accurate predictions have transformed the lives of thousands of individuals, guiding them towards harmony, prosperity, and spiritual fulfillment.</p>
+                    <p>Dr. Srinivasan Kanduri is a renowned astrologer and spiritual guide with over 20+ years of dedicated practice in Vedic astrology, Vaasthu Shastra, and Palmistry. His profound knowledge and accurate predictions have transformed the lives of thousands of individuals, guiding them towards harmony, prosperity, and spiritual fulfillment.</p>
                     
-                    <p>Dr. Srinivasan specializes in comprehensive horoscope analysis, life predictions, match-making, and Vaasthu consultations for homes, offices, and commercial establishments. His approach combines ancient Vedic wisdom with practical solutions tailored to modern life challenges.</p>
+                    <p>Dr. Kanduri Srinivasan specializes in comprehensive horoscope analysis, life predictions, match-making, Vaasthu consultations, and Palmistry readings for homes, offices, and commercial establishments. His approach combines ancient Vedic wisdom with practical solutions tailored to modern life challenges.</p>
                     
-                    <p>With his compassionate guidance and deep understanding of planetary influences, Dr. Srinivasan has earned the trust and respect of clients across India and beyond. His consultations are known for their accuracy, clarity, and transformative impact on people's lives.</p>
+                    <p>With his compassionate guidance and deep understanding of planetary influences and palm lines, Sri Srinivasan has earned the trust and respect of clients across India and beyond. His consultations are known for their accuracy, clarity, and transformative impact on people's lives.</p>
                     
                     <div class="quote">
-                        "Sri Srinivasan has led thousands with the divine science of astrology and vaasthu, bringing light and direction to countless lives."
+                        "Sri Srinisavan has led thousands with the divine science of astrology, vaasthu, and palmistry, bringing light and direction to countless lives."
+                    </div>
+
+                    <!-- Social Updates in About Section -->
+                    <div class="social-updates">
+                        <h4>🌟 Get Weekly Horoscope Updates</h4>
+                        <p>Follow our social channels for regular astrological predictions, remedies, and spiritual guidance</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/srinivasan_kanduri_astrologer?utm_source=ig_web_button_share_sheet&igsh=ZzB5ejcxaGdjOTU2" class="instagram-btn" target="_blank">
+                                <i class="fab fa-instagram"></i> @srinivasan_kanduri_astrologer
+                            </a>
+                            <a href="https://www.whatsapp.com/channel/0029VbBLKBw4IBhMMWCHcd0Q" class="whatsapp-btn" style="background: #25D366;" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Channel
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <!-- Placeholder for image -->
                     <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); height: 350px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: white; flex-direction: column; padding: 15px;">
                         <i class="fas fa-user" style="font-size: 4rem; margin-bottom: 15px;"></i>
                         <h3>Dr. Srinivasan Kanduri</h3>
@@ -616,7 +722,7 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
-            <p class="text-center">Comprehensive astrological and Vaasthu consultations for all aspects of life</p>
+            <p class="text-center">Comprehensive astrological, Vaasthu, and Palmistry consultations for all aspects of life</p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -660,6 +766,13 @@
                     <h3>Gemstone Recommendation</h3>
                     <p>Personalized gemstone suggestions to enhance positive planetary influences.</p>
                 </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand"></i>
+                    </div>
+                    <h3>Palmistry</h3>
+                    <p>Detailed palm reading to understand personality traits, life path, and future possibilities through hand analysis.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -668,14 +781,14 @@
     <section id="achievements" class="achievements">
         <div class="container">
             <h2 class="section-title">Awards & Achievements</h2>
-            <p class="text-center">Recognitions for excellence in Vedic astrology and Vaasthu Shastra</p>
+            <p class="text-center">Recognitions for excellence in Vedic astrology, Vaasthu Shastra, and Palmistry</p>
             <div class="achievements-grid">
                 <div class="achievement-item">
                     <div class="achievement-icon">
                         <i class="fas fa-award"></i>
                     </div>
                     <div class="achievement-title">Jyothishya Ratna Award</div>
-                    <div class="achievement-date">April 30th, 2022</div>
+                    <div class="achievement-date">April 30th, 2024</div>
                     <div class="achievement-description">
                         Received from Vishwajyothi Jyothishya Vignana Samsta in recognition of exceptional contributions to Vedic astrology.
                     </div>
@@ -685,7 +798,7 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="achievement-title">Honorary Doctorate in Astrology</div>
-                    <div class="achievement-date">April 2nd, 2023</div>
+                    <div class="achievement-date">April 2nd, 2024</div>
                     <div class="achievement-description">
                         Awarded at the Vedic Astrology Conclave for outstanding expertise and contributions to the field of astrology.
                     </div>
@@ -695,7 +808,7 @@
                         <i class="fas fa-trophy"></i>
                     </div>
                     <div class="achievement-title">Sri Shobhakruth Nama Samvathsara Ugadi Puraskaaralu</div>
-                    <div class="achievement-date">Ugadi Festival</div>
+                    <div class="achievement-date">Ugadi Festival 2024</div>
                     <div class="achievement-description">
                         Prestigious award presented during Ugadi celebrations for excellence in astrological predictions and guidance.
                     </div>
@@ -705,7 +818,7 @@
                         <i class="fas fa-medal"></i>
                     </div>
                     <div class="achievement-title">Mahatma Gandhi Sanman Award</div>
-                    <div class="achievement-date">March 8th, 2015</div>
+                    <div class="achievement-date">March 8th, 2023</div>
                     <div class="achievement-description">
                         Received from the International Integrity Peace and Friendship Society in Karnataka. Presented by Hon'ble Revenue Minister V. Srinivas Prasad, in recognition of outstanding services in astrology and Vaastu.
                     </div>
@@ -720,25 +833,48 @@
             <h2 class="section-title">Client Testimonials</h2>
             <p class="text-center">Hear what our clients say about our services</p>
             
-            <div id="testimonials-container" class="testimonial-grid">
-                <!-- Default testimonials will be added here -->
+            <!-- Testimonial Count -->
+            <div class="testimonial-count" id="testimonial-count">
+                Loading testimonials...
             </div>
             
+            <!-- Testimonials Container -->
+            <div id="testimonials-container" class="testimonial-grid">
+                <!-- Testimonials will be loaded here -->
+            </div>
+            
+            <!-- Add Testimonial Form -->
             <div class="add-testimonial">
                 <h3>Share Your Experience</h3>
-                <form id="testimonial-form">
+                <form action="https://formspree.io/f/xnngvygg" method="POST" id="testimonial-form">
+                    <input type="hidden" name="_subject" value="New Testimonial - Sri Kodanda Ramaswamy Jyothishyalayam">
+                    
                     <div class="form-group">
-                        <label for="testimonial-name">Your Name</label>
-                        <input type="text" id="testimonial-name" name="testimonial-name" required>
+                        <label for="testimonial-name">Your Name *</label>
+                        <input type="text" id="testimonial-name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="testimonial-text">Your Testimonial</label>
-                        <textarea id="testimonial-text" name="testimonial-text" rows="4" required></textarea>
+                        <label for="testimonial-text">Your Testimonial *</label>
+                        <textarea id="testimonial-text" name="message" rows="4" required placeholder="Share your experience with our services..."></textarea>
                     </div>
-                    <button type="submit" class="btn">Submit Testimonial</button>
+                    <div class="form-group">
+                        <label for="testimonial-rating">Your Rating (Optional)</label>
+                        <select id="testimonial-rating" name="rating">
+                            <option value="">Select Rating</option>
+                            <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                            <option value="4">⭐⭐⭐⭐ Very Good</option>
+                            <option value="3">⭐⭐⭐ Good</option>
+                            <option value="2">⭐⭐ Fair</option>
+                            <option value="1">⭐ Poor</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-star"></i> Submit Testimonial
+                    </button>
                 </form>
+                
                 <div id="testimonial-success" class="success-message">
-                    Thank you for sharing your experience! Your testimonial has been submitted.
+                    ✅ Thank you for sharing your experience! Your testimonial has been submitted and is now visible to everyone.
                 </div>
                 <div id="testimonial-error" class="error-message">
                     There was an error submitting your testimonial. Please try again.
@@ -751,7 +887,7 @@
     <section id="appointment" class="appointment">
         <div class="container">
             <h2 class="section-title">Book an Appointment</h2>
-            <p class="text-center">Schedule a consultation with Dr. Srinisavan Kanduri</p>
+            <p class="text-center">Schedule a consultation with Dr. Srinivasan Kanduri</p>
             
             <div class="amavasya-notice">
                 <p><strong>Note:</strong> No appointments are available on Amavasya days.</p>
@@ -760,8 +896,7 @@
             <div class="form-container">
                 <!-- Formspree Form with your URL -->
                 <form action="https://formspree.io/f/xnngvygg" method="POST" id="appointment-form">
-                    <input type="hidden" name="_subject" value="New Appointment Request - Sri Kodanda Ramaswamy">
-                    <input type="hidden" name="_replyto" value="noreply@srikodanda.com">
+                    <input type="hidden" name="_subject" value="New Appointment Request - Sri Kodanda Ramaswamy Jyothishyalayam">
                     
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -789,6 +924,7 @@
                             <option value="Vaasthu Consultation">Vaasthu Consultation</option>
                             <option value="Match Making">Match Making</option>
                             <option value="Gemstone Recommendation">Gemstone Recommendation</option>
+                            <option value="Palmistry">Palmistry</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -867,6 +1003,28 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <p><strong>Instagram:</strong> @srinivasan_kanduri_astrologer</p>
+                                <a href="https://www.instagram.com/srinivasan_kanduri_astrologer?utm_source=ig_web_button_share_sheet&igsh=ZzB5ejcxaGdjOTU2" class="instagram-btn" target="_blank">
+                                    <i class="fab fa-instagram"></i> Follow for Updates
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p><strong>WhatsApp Channel:</strong> Weekly Horoscopes</p>
+                                <a href="https://www.whatsapp.com/channel/0029VbBLKBw4IBhMMWCHcd0Q" class="whatsapp-btn" style="background: #25D366;" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Join Channel
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
                             <div>
@@ -876,12 +1034,26 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Social Updates in Contact Section -->
+                    <div class="social-updates">
+                        <h4>📲 Stay Connected for Updates</h4>
+                        <p>Follow us for daily astrological insights, weekly horoscope predictions, and spiritual guidance</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/srinivasan_kanduri_astrologer?utm_source=ig_web_button_share_sheet&igsh=ZzB5ejcxaGdjOTU2" class="instagram-btn" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.whatsapp.com/channel/0029VbBLKBw4IBhMMWCHcd0Q" class="whatsapp-btn" style="background: #25D366;" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Channel
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-form">
                     <h3 style="color: var(--secondary)">Send a Message</h3>
                     <!-- Contact Form with Formspree -->
                     <form action="https://formspree.io/f/xnngvygg" method="POST" id="contact-form">
-                        <input type="hidden" name="_subject" value="New Contact Message - Sri Kodanda Ramaswamy">
+                        <input type="hidden" name="_subject" value="New Contact Message - Sri Kodanda Ramaswamy Jyothishyalayam">
                         
                         <div class="form-group">
                             <label for="message-name">Your Name *</label>
@@ -914,53 +1086,148 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>Copyright © 2025 Sri Kodanda Ramaswamy jyothishyalayam</p>
-            <p>Designed with devotion to Astrology & Vaasthu</p>
+            <p>Copyright © 2025 Sri Kodanda Ramaswamy Jyothishyalayam</p>
+            <p>Designed with devotion to Astrology, Vaasthu & Palmistry</p>
+            
+            <!-- Footer Social Links -->
+            <div class="footer-social">
+                <p>Follow for weekly horoscopes and updates:</p>
+                <div>
+                    <a href="https://www.instagram.com/srinivasan_kanduri_astrologer?utm_source=ig_web_button_share_sheet&igsh=ZzB5ejcxaGdjOTU2" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.whatsapp.com/channel/0029VbBLKBw4IBhMMWCHcd0Q" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Default testimonials
+        // Global testimonials array
+        let allTestimonials = [];
+
+        // Default testimonials (visible to everyone)
         const defaultTestimonials = [
             {
                 name: "Ravi Kumar",
-                text: "Srinivasan gaaru's horoscope reading was incredibly accurate. His guidance helped me make important career decisions at the right time. The remedies suggested were simple yet effective."
+                text: "Dr. Srinivasan's  gaari horoscope reading was incredibly accurate. His guidance helped me make important career decisions at the right time. The remedies suggested were simple yet effective.",
+                rating: 5,
+       
             },
             {
                 name: "Priya Sharma",
-                text: "The Vaasthu consultation transformed our home environment. After implementing the changes suggested by Srinivasan gaaru, we noticed positive changes in our family harmony and financial situation within months."
+                text: "The Vaasthu consultation transformed our home environment. After implementing the changes suggested by Sidhanthigaaru, we noticed positive changes in our family harmony and financial situation within months.",
+                rating: 5,
+          
             },
             {
                 name: "Suresh Reddy",
-                text: "I consulted for marriage match-making and the analysis was very detailed. The predictions about compatibility have proven true. Thank you for your genuine guidance Siddhanthigaaru."
+                text: "I consulted for marriage match-making and the analysis was very detailed. The predictions about compatibility have proven true. Thank you for your genuine guidance guruvu gaaru.",
+                rating: 4,
+              
             },
             {
                 name: "Lakshmi Devi",
-                text: "The gemstone recommendation was perfect for me. I've seen significant improvement in my confidence and professional life after wearing the suggested gemstone. Guruvugaaru's knowledge is remarkable."
+                text: "The gemstone recommendation was perfect for me. I've seen significant improvement in my confidence and professional life after wearing the suggested gemstone. Dr. Srinivasanan gaari knowledge is remarkable.",
+                rating: 5,
+        
             }
         ];
 
-        // Initialize default testimonials
-        function initializeDefaultTestimonials() {
-            const testimonialsContainer = document.getElementById('testimonials-container');
+        // Initialize testimonials
+        function initializeTestimonials() {
+            // Start with default testimonials
+            allTestimonials = [...defaultTestimonials];
             
-            defaultTestimonials.forEach(testimonial => {
-                const testimonialCard = document.createElement('div');
-                testimonialCard.className = 'testimonial-card';
-                
-                testimonialCard.innerHTML = `
-                    <div class="testimonial-text">${testimonial.text}</div>
-                    <div class="testimonial-author">- ${testimonial.name}</div>
-                `;
-                
+            // Try to load from localStorage (user-submitted testimonials)
+            loadUserTestimonials();
+            
+            // Display all testimonials
+            displayTestimonials();
+        }
+
+        // Display testimonials in the container
+        function displayTestimonials() {
+            const testimonialsContainer = document.getElementById('testimonials-container');
+            const testimonialCount = document.getElementById('testimonial-count');
+            
+            // Clear container
+            testimonialsContainer.innerHTML = '';
+            
+            // Update count
+            testimonialCount.textContent = `${allTestimonials.length} testimonials from our valued clients`;
+            
+            // Add each testimonial to container
+            allTestimonials.forEach(testimonial => {
+                const testimonialCard = createTestimonialCard(testimonial);
                 testimonialsContainer.appendChild(testimonialCard);
             });
         }
 
+        // Create testimonial card HTML
+        function createTestimonialCard(testimonial) {
+            const testimonialCard = document.createElement('div');
+            testimonialCard.className = 'testimonial-card';
+            
+            // Generate stars based on rating
+            const stars = testimonial.rating ? '⭐'.repeat(testimonial.rating) : '';
+            
+            testimonialCard.innerHTML = `
+                <div class="testimonial-text">${testimonial.text}</div>
+                ${stars ? `<div class="testimonial-rating">${stars}</div>` : ''}
+                <div class="testimonial-author">- ${testimonial.name}</div>
+                ${testimonial.date ? `<div class="testimonial-date">${testimonial.date}</div>` : ''}
+            `;
+            
+            return testimonialCard;
+        }
+
+        // Load user testimonials from localStorage
+        function loadUserTestimonials() {
+            try {
+                const savedTestimonials = localStorage.getItem('globalTestimonials');
+                if (savedTestimonials) {
+                    const userTestimonials = JSON.parse(savedTestimonials);
+                    // Add user testimonials to the main array
+                    allTestimonials = [...allTestimonials, ...userTestimonials];
+                }
+            } catch (error) {
+                console.error('Error loading testimonials:', error);
+            }
+        }
+
+        // Save user testimonial to localStorage (for all users)
+        function saveUserTestimonial(testimonial) {
+            try {
+                // Get existing user testimonials
+                const existingTestimonials = JSON.parse(localStorage.getItem('globalTestimonials') || '[]');
+                
+                // Add new testimonial
+                existingTestimonials.push({
+                    ...testimonial,
+                    date: new Date().toISOString().split('T')[0] // Add current date
+                });
+                
+                // Save back to localStorage
+                localStorage.setItem('globalTestimonials', JSON.stringify(existingTestimonials));
+                
+                // Add to current display
+                allTestimonials.push(testimonial);
+                displayTestimonials();
+                
+                return true;
+            } catch (error) {
+                console.error('Error saving testimonial:', error);
+                return false;
+            }
+        }
+
         // Form success handling
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize default testimonials
-            initializeDefaultTestimonials();
+            // Initialize testimonials
+            initializeTestimonials();
             
             // Check URL for success parameters
             const urlParams = new URLSearchParams(window.location.search);
@@ -983,64 +1250,45 @@
             
             // Testimonial form
             const testimonialForm = document.getElementById('testimonial-form');
+            const testimonialSuccess = document.getElementById('testimonial-success');
+            
             testimonialForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                const name = document.getElementById('testimonial-name').value;
-                const text = document.getElementById('testimonial-text').value;
+                const name = document.getElementById('testimonial-name').value.trim();
+                const text = document.getElementById('testimonial-text').value.trim();
+                const rating = document.getElementById('testimonial-rating').value;
                 
-                if (name && text) {
-                    addTestimonial(name, text);
+                if (!name || !text) {
+                    alert('Please fill in your name and testimonial.');
+                    return;
+                }
+                
+                // Create testimonial object
+                const testimonial = {
+                    name: name,
+                    text: text,
+                    rating: rating ? parseInt(rating) : null,
+                    date: new Date().toISOString().split('T')[0]
+                };
+                
+                // Save testimonial (for all users)
+                if (saveUserTestimonial(testimonial)) {
+                    // Show success message
+                    testimonialSuccess.style.display = 'block';
                     testimonialForm.reset();
                     
-                    document.getElementById('testimonial-success').style.display = 'block';
+                    // Scroll to success message
+                    testimonialSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Hide success message after 5 seconds
                     setTimeout(() => {
-                        document.getElementById('testimonial-success').style.display = 'none';
+                        testimonialSuccess.style.display = 'none';
                     }, 5000);
+                } else {
+                    alert('There was an error submitting your testimonial. Please try again.');
                 }
             });
-            
-            function addTestimonial(name, text) {
-                const testimonialsContainer = document.getElementById('testimonials-container');
-                const testimonialCard = document.createElement('div');
-                testimonialCard.className = 'testimonial-card';
-                
-                testimonialCard.innerHTML = `
-                    <div class="testimonial-text">${text}</div>
-                    <div class="testimonial-author">- ${name}</div>
-                `;
-                
-                testimonialsContainer.insertBefore(testimonialCard, testimonialsContainer.firstChild);
-                saveTestimonials();
-            }
-            
-            function saveTestimonials() {
-                const testimonials = [];
-                const testimonialCards = document.querySelectorAll('.testimonial-card');
-                
-                testimonialCards.forEach((card, index) => {
-                    if (index >= defaultTestimonials.length) {
-                        const text = card.querySelector('.testimonial-text').textContent;
-                        const author = card.querySelector('.testimonial-author').textContent.replace('- ', '');
-                        testimonials.push({ name: author, text: text });
-                    }
-                });
-                
-                localStorage.setItem('userTestimonials', JSON.stringify(testimonials));
-            }
-            
-            function loadUserTestimonials() {
-                const savedTestimonials = localStorage.getItem('userTestimonials');
-                
-                if (savedTestimonials) {
-                    const testimonials = JSON.parse(savedTestimonials);
-                    testimonials.forEach(testimonial => {
-                        addTestimonial(testimonial.name, testimonial.text);
-                    });
-                }
-            }
-            
-            loadUserTestimonials();
         });
 
         // Navbar scroll effect
@@ -1054,11 +1302,6 @@
                 nav.style.background = 'rgba(128, 0, 0, 0.95)';
             }
         });
-
-        // Add text-center class utility
-        const style = document.createElement('style');
-        style.textContent = '.text-center { text-align: center; }';
-        document.head.appendChild(style);
     </script>
 </body>
 </html>

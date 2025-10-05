@@ -608,6 +608,7 @@
             margin-top: 15px;
             text-align: center;
             border: 1px solid #c3e6cb;
+            display: none;
         }
 
         .error-message {
@@ -618,6 +619,7 @@
             margin-top: 15px;
             text-align: center;
             border: 1px solid #f5c6cb;
+            display: none;
         }
 
         .loading-message {
@@ -628,6 +630,7 @@
             margin-top: 15px;
             text-align: center;
             border: 1px solid #bee5eb;
+            display: none;
         }
 
         .alternative-contact {
@@ -895,17 +898,17 @@
                     </button>
                 </form>
                 
-                <div id="testimonial-success" class="success-message" style="display: none;">
+                <div id="testimonial-success" class="success-message">
                     ✅ Thank you for sharing your experience!
                 </div>
-                <div id="testimonial-error" class="error-message" style="display: none;">
+                <div id="testimonial-error" class="error-message">
                     There was an error submitting your testimonial. Please try again.
                 </div>
             </div>
         </div>
     </section>
 
-  <!-- Appointment Section -->
+    <!-- Appointment Section -->
     <section id="appointment" class="appointment">
         <div class="container">
             <h2 class="section-title">Book an Appointment</h2>
@@ -1141,25 +1144,21 @@
                 name: "Ravi Kumar",
                 text: "Dr. Srinisavasan gaaru horoscope reading was incredibly accurate. His guidance helped me make important career decisions at the right time. The remedies suggested were simple yet effective.",
                 rating: 5,
-              
             },
             {
                 name: "Priya Sharma",
                 text: "The Vaasthu consultation transformed our home environment. After implementing the changes suggested by Sidhanthigaaru, we noticed positive changes in our family harmony and financial situation within months.",
                 rating: 5,
-         
             },
             {
                 name: "Suresh Reddy",
                 text: "I consulted for marriage match-making and the analysis was very detailed. The predictions about compatibility have proven true. Thank you for your genuine guidance. guruvugaaru",
                 rating: 4,
-               
             },
             {
                 name: "Lakshmi Devi",
                 text: "The gemstone recommendation was perfect for me. I've seen significant improvement in my confidence and professional life after wearing the suggested gemstone.Srinivasan gaaru knowledge is remarkable.",
                 rating: 5,
-               
             }
         ];
 
@@ -1371,6 +1370,40 @@
                 // Re-enable submit button
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fas fa-star"></i> Submit Testimonial';
+            });
+
+            // Handle appointment form submission
+            const appointmentForm = document.getElementById('appointment-form');
+            const formSuccess = document.getElementById('form-success');
+            
+            appointmentForm.addEventListener('submit', function(e) {
+                // Show success message
+                formSuccess.style.display = 'block';
+                
+                // Scroll to success message
+                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Hide success message after 10 seconds
+                setTimeout(() => {
+                    formSuccess.style.display = 'none';
+                }, 10000);
+            });
+
+            // Handle contact form submission
+            const contactForm = document.getElementById('contact-form');
+            const contactSuccess = document.getElementById('contact-success');
+            
+            contactForm.addEventListener('submit', function(e) {
+                // Show success message
+                contactSuccess.style.display = 'block';
+                
+                // Scroll to success message
+                contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Hide success message after 10 seconds
+                setTimeout(() => {
+                    contactSuccess.style.display = 'none';
+                }, 10000);
             });
         });
 

@@ -1130,10 +1130,8 @@
     </footer>
 
     <script>
-        // Database configuration for db.js
-        const DB_NAME = 'srikodanda_testimonials';
-        const DB_URL = `https://api.jsonbin.io/v3/b/67b3a3a9acd3cb34a88df6db`;
-        const DB_ACCESS_KEY = '$2a$10$QhW5lzO9v8w7K6dY2sT8E.7nV1pXrL9cB3mZ4wA5yN8qP7jR2tH6u';
+        // Google Sheets Configuration - YOUR WEB APP URL IS ALREADY INSERTED
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxqeSAO6-6h1EnMSvSoyFyEA9kaO-Qlagi9Z-MpAPf8WKnhXSbgI3GhTX-0wCj8_MfV/exec';
 
         // Global testimonials array
         let allTestimonials = [];
@@ -1144,49 +1142,48 @@
                 name: "Ravi Kumar",
                 text: "Dr. Srinisavasan gaaru horoscope reading was incredibly accurate. His guidance helped me make important career decisions at the right time. The remedies suggested were simple yet effective.",
                 rating: 5,
+                date: "2024-01-15"
             },
             {
                 name: "Priya Sharma",
                 text: "The Vaasthu consultation transformed our home environment. After implementing the changes suggested by Sidhanthigaaru, we noticed positive changes in our family harmony and financial situation within months.",
                 rating: 5,
+                date: "2024-02-20"
             },
             {
                 name: "Suresh Reddy",
                 text: "I consulted for marriage match-making and the analysis was very detailed. The predictions about compatibility have proven true. Thank you for your genuine guidance. guruvugaaru",
                 rating: 4,
+                date: "2024-03-10"
             },
             {
                 name: "Lakshmi Devi",
                 text: "The gemstone recommendation was perfect for me. I've seen significant improvement in my confidence and professional life after wearing the suggested gemstone.Srinivasan gaaru knowledge is remarkable.",
                 rating: 5,
+                date: "2024-01-28"
             }
         ];
 
-        // Load testimonials from database
+        // Load testimonials from Google Sheets
         async function loadTestimonials() {
             try {
                 showLoading();
                 
-                const response = await fetch(DB_URL + '/latest', {
-                    method: 'GET',
-                    headers: {
-                        'X-Master-Key': DB_ACCESS_KEY,
-                        'Content-Type': 'application/json'
-                    }
-                });
-
+                const response = await fetch(SHEET_URL + '?action=getTestimonials');
+                
                 if (response.ok) {
                     const data = await response.json();
-                    const savedTestimonials = data.record.testimonials || [];
-                    
-                    // Combine default testimonials with saved ones
-                    allTestimonials = [...defaultTestimonials, ...savedTestimonials];
-                    
-                    displayTestimonials();
-                    hideLoading();
+                    if (data.success) {
+                        allTestimonials = [...defaultTestimonials, ...data.testimonials];
+                    } else {
+                        throw new Error('Failed to load testimonials from server');
+                    }
                 } else {
-                    throw new Error('Failed to load testimonials');
+                    throw new Error('Network response was not ok');
                 }
+                
+                displayTestimonials();
+                hideLoading();
             } catch (error) {
                 console.error('Error loading testimonials:', error);
                 // Fallback to default testimonials
@@ -1196,39 +1193,34 @@
             }
         }
 
-        // Save testimonial to database
+        // Save testimonial to Google Sheets
         async function saveTestimonial(testimonial) {
             try {
-                // Add to local array first for immediate display
-                allTestimonials.unshift(testimonial);
-                displayTestimonials();
-
-                // Prepare data for database
-                const savedTestimonials = allTestimonials.filter(t => !defaultTestimonials.includes(t));
-                const dataToSave = {
-                    testimonials: savedTestimonials,
-                    lastUpdated: new Date().toISOString()
-                };
-
-                const response = await fetch(DB_URL, {
-                    method: 'PUT',
+                const response = await fetch(SHEET_URL, {
+                    method: 'POST',
                     headers: {
-                        'X-Master-Key': DB_ACCESS_KEY,
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(dataToSave)
+                    body: JSON.stringify({
+                        action: 'addTestimonial',
+                        name: testimonial.name,
+                        message: testimonial.text,
+                        rating: testimonial.rating || 5,
+                        date: testimonial.date
+                    })
                 });
 
-                if (!response.ok) {
-                    throw new Error('Failed to save testimonial');
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result.success) {
+                        // Reload testimonials to include the new one
+                        await loadTestimonials();
+                        return true;
+                    }
                 }
-
-                return true;
+                return false;
             } catch (error) {
                 console.error('Error saving testimonial:', error);
-                // Remove from local array if save failed
-                allTestimonials = allTestimonials.filter(t => t !== testimonial);
-                displayTestimonials();
                 return false;
             }
         }
@@ -1344,11 +1336,11 @@
                 const testimonial = {
                     name: name,
                     text: text,
-                    rating: rating ? parseInt(rating) : null,
+                    rating: rating ? parseInt(rating) : 5,
                     date: new Date().toISOString().split('T')[0]
                 };
                 
-                // Save testimonial to database
+                // Save testimonial to Google Sheets
                 const success = await saveTestimonial(testimonial);
                 
                 if (success) {
@@ -1377,16 +1369,16 @@
             const formSuccess = document.getElementById('form-success');
             
             appointmentForm.addEventListener('submit', function(e) {
-                // Show success message
-                formSuccess.style.display = 'block';
-                
-                // Scroll to success message
-                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Hide success message after 10 seconds
+                // Show success message after a short delay
                 setTimeout(() => {
-                    formSuccess.style.display = 'none';
-                }, 10000);
+                    formSuccess.style.display = 'block';
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Hide success message after 10 seconds
+                    setTimeout(() => {
+                        formSuccess.style.display = 'none';
+                    }, 10000);
+                }, 100);
             });
 
             // Handle contact form submission
@@ -1394,16 +1386,16 @@
             const contactSuccess = document.getElementById('contact-success');
             
             contactForm.addEventListener('submit', function(e) {
-                // Show success message
-                contactSuccess.style.display = 'block';
-                
-                // Scroll to success message
-                contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Hide success message after 10 seconds
+                // Show success message after a short delay
                 setTimeout(() => {
-                    contactSuccess.style.display = 'none';
-                }, 10000);
+                    contactSuccess.style.display = 'block';
+                    contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Hide success message after 10 seconds
+                    setTimeout(() => {
+                        contactSuccess.style.display = 'none';
+                    }, 10000);
+                }, 100);
             });
         });
 
